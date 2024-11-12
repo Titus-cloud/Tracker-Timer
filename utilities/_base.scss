@@ -1,6 +1,32 @@
+@use "./variables" as *;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
+}
+
+a{
+  color: $primary-color;
+  text-decoration: none;
+  font-size: .7em;
+  // text-align: center;
+  &:hover{
+    color: $font-color;
+  }
+}
+
+img{
+  width: 200px; 
+  height: auto;
+  border-radius: 30%;
+}
+
+.container {
+  display: flex;
+  max-width: 1000px;
+  background-color: #FFF;
+  border-radius: 10px;
+  overflow: hidden;
 }
