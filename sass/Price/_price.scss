@@ -1,23 +1,16 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #FFA726;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
-}
-
 .plans-container {
   text-align: center;
   max-width: 1000px;
   width: 100%;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // flex-direction: column;
+  .heading{
+    display: flex;
+    justify-items: center;
+
+  }
 }
 
 h2 {
@@ -47,6 +40,7 @@ h3 {
 p {
   font-size: 1.2em;
   margin-bottom: 10px;
+  // color: black;
 }
 
 h4 {
