@@ -1,0 +1,69 @@
+@use "../../utilities/variables" as *;
+
+.left-section {
+  background-color: $primary-color;
+  padding: 80px ;
+  color: $secondary-color;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .logo {
+    max-width: 100px;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 1.2em;
+  }
+}
+
+.register-box {
+  padding: 40px;
+  flex: 1;
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+  }
+  
+  input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .signup-btn {
+    background-color: $primary-color;
+    color: $font-color;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .signup-btn:hover {
+    background-color: $primary-color;
+    &:hover{
+      background-color: $link-hover;
+      color: $secondary-color;
+    }
+  }
+  
+}
+
