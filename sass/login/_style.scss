@@ -1,20 +1,14 @@
 @use "../../utilities/variables" as *;
 
-body {
-  background-color: #FFA726;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
 
-.container {
-  display: flex;
-  max-width: 1440px;
-  background-color: $secondary-color;
-  border-radius: 10px;
-  overflow: hidden;
-}
+
+// .container {
+//   display: flex;
+//   max-width: 1440px;
+//   background-color: $secondary-color;
+//   border-radius: 10px;
+//   overflow: hidden;
+// }
 
 .left-section {
   background-color: $primary-color;

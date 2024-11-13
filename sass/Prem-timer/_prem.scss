@@ -1,0 +1,92 @@
+@use "../../utilities/variables" as*;
+
+.timer {
+  max-width: 600px;
+  background-color: $primary-color;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px $font-color;
+  padding: 20px;
+  margin: 20px;
+  // font-family: Arial, sans-serif;
+}
+
+.timer-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.time-display {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.time-display h4 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.time-display p {
+  font-size: 48px;
+  margin: 5px 0;
+}
+
+.days {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.days span {
+  background-color: white;
+  color: #ff9800;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 3px 5px;
+  font-size: 12px;
+}
+
+.stop-button {
+  background-color: $link-hover;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  &:hover{
+    background-color: $primary-color;
+    color: #000;
+  }&:active{
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+.motivation {
+  background-color: white;
+  color: #333;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.motivation h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+// .motivation p {
+//   font-size: 14px;
+//   line-height: 1.5;
+// }
+
+blockquote {
+  font-style: italic;
+  color: #555;
+  border-left: 4px solid $primary-color;
+  padding-left: 10px;
+  font-weight: 700;
+}

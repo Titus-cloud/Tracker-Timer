@@ -7,6 +7,14 @@
   font-family: "Montserrat", sans-serif;
 }
 
+body {
+  background-color: #FFA726;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 a{
   color: $primary-color;
   text-decoration: none;

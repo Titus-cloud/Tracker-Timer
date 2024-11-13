@@ -1,0 +1,89 @@
+@use "../../utilities/variables" as *;
+
+.timer-card {
+  display: flex;
+  border: 1px solid $link-hover;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: $secondary-color;
+  box-shadow: 2px 2px 8px $font-color;
+  width: 300px;
+  flex-direction: column;
+  margin: 10px;
+  // padding: 10px;
+}
+
+.topp {
+  align-items: center;
+  display: flex;
+  // padding: 40px;
+  justify-content: space-between;
+  h2:last-child {
+    // color: red;
+    // padding-right: 4em;
+    font-weight: bold;
+  }
+}
+.deadline-section {
+  background-color: $primary-color;
+  padding: 20px;
+  text-align: center;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+.divider {
+  font-weight: normal;
+  opacity: 0.7;
+}
+
+.deadline-info,
+.time-left {
+  margin-bottom: 10px;
+}
+
+.lab {
+  font-weight: bold;
+  // margin-bottom: 2em;
+}
+
+.labelOne {
+  font-weight: bold;
+  // margin-bottom: 2em;
+  color: #fff;
+}
+
+.date,
+.countdown {
+  font-size: 1.5em;
+  margin-top: 5px;
+}
+
+.day {
+  font-size: 1.5em;
+  margin-bottom: 2em;
+}
+
+.motivation-section {
+  padding: 15px;
+}
+
+blockquote {
+  font-style: italic;
+  color: #555;
+  border-left: 4px solid $primary-color;
+  padding-left: 10px;
+  font-weight: 700;
+}
+
+.countdown,
+.date,
+.day,
+.deadline-info,
+.label:hover {
+  color: inherit;
+}
