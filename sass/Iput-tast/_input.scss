@@ -1,0 +1,33 @@
+@use "../../utilities/variables" as *;
+
+.one {
+  width: 500px;
+  box-shadow: 2px 2px $shadow-color;
+  background-color: $primary-color;
+  height: 600px;
+  align-items: center;
+  align-content: center;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 70px;
+}
+
+input {
+  height: 30px;
+  outline: none;
+  padding: 20px;
+  font-size: 1em;
+  border-radius: 10px;
+  border: none;
+}
+
+button {
+  padding-left: 10px;
+  background-color: $link-hover;
+  border: none;
+  height: 40px;
+  // text-align: center;
+  border-radius: 10px;
+  // align-items: center;
+  font-size: 1em;
+}

@@ -1,7 +1,11 @@
+@use "../../utilities/variables" as *;
+
 .plans-container {
   text-align: center;
   max-width: 1000px;
   width: 100%;
+  box-shadow: 2px 2px 2px 2px $shadow-color;
+  border-radius: 10px;
   // display: flex;
   // align-items: center;
   // justify-content: center;
@@ -14,33 +18,34 @@
 }
 
 h2 {
-  margin-bottom: 20px;
-  color: #FFF;
+  margin-bottom: 80px;
 }
 
 .plan-card {
-  background-color: #FFF;
+  background-color: #fff;
   border-radius: 10px;
   padding: 20px;
   margin: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px $shadow-color;
   flex: 1;
   transition: transform 0.3s;
 }
 
 .plan-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-20px);
+  // transform: translateX(-20px);
 }
 
 h3 {
-  color: #FF8C00;
+  align-items: flex-start;
+  color: $font-color;
   margin-bottom: 10px;
 }
 
 p {
   font-size: 1.2em;
   margin-bottom: 10px;
-  // color: black;
+  color: $font-color;
 }
 
 h4 {
@@ -49,7 +54,7 @@ h4 {
 }
 
 ul {
-  list-style: none;
+  // list-style: none;
   margin-bottom: 20px;
   text-align: left;
   padding-left: 20px;
@@ -60,17 +65,22 @@ ul li {
 }
 
 .get-started {
-  background-color: #FF8C00;
-  color: #FFF;
+  background-color: $primary-color;
+  color: $secondary-color;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1em;
+  align-items: end;
+
+  // &:nth-child(1){
+  //   padding-top: 10em;
+  // }
 }
 
 .get-started:hover {
-  background-color: #E67E22;
+  background-color: $link-hover;
 }
 
 /* Responsive Design */

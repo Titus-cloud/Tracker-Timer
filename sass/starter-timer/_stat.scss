@@ -1,0 +1,50 @@
+@use "../../utilities/variables" as *;
+
+.timer-card {
+  display: flex;
+  border: 1px solid $link-hover;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: $secondary-color;
+  width: 300px;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.timer-section {
+  background-color: $primary-color;
+  padding: 20px;
+  text-align: center;
+  // color: #fff;
+}
+
+.time {
+  font-size: 3em;
+  font-weight: bold;
+  // margin: 10px 0;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.controls button {
+  border: none;
+  background: none;
+  // color: #fff;
+  font-weight: 500;
+  align-items: center;
+  font-size: 1.5em;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.motivation-section {
+  padding: 15px;
+}
+
+blockquote {
+  font-style: italic;
+  color: #555;
+  border-left: 4px solid $primary-color;
+  padding-left: 10px;
+  font-weight: 700;
+}

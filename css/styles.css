@@ -22,8 +22,8 @@ img {
 
 .container {
   display: flex;
-  max-width: 1000px;
-  background-color: #FFF;
+  max-width: 1440px;
+  background-color: #F9A826;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -181,14 +181,27 @@ input[type=password] {
   background-color: #F9A826;
 }
 .register-box .signup-btn:hover:hover {
-  background-color: #E67E22;
+  background-color: #ffbf00;
   color: #fff;
 }
 
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .plan-card {
+    max-width: 90%;
+    margin: 20px 0;
+  }
+}
 .plans-container {
   text-align: center;
   max-width: 1000px;
   width: 100%;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 .plans-container .heading {
   display: flex;
@@ -196,32 +209,33 @@ input[type=password] {
 }
 
 h2 {
-  margin-bottom: 20px;
-  color: #FFF;
+  margin-bottom: 80px;
 }
 
 .plan-card {
-  background-color: #FFF;
+  background-color: #fff;
   border-radius: 10px;
   padding: 20px;
   margin: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   flex: 1;
   transition: transform 0.3s;
 }
 
 .plan-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-20px);
 }
 
 h3 {
-  color: #FF8C00;
+  align-items: flex-start;
+  color: #000;
   margin-bottom: 10px;
 }
 
 p {
   font-size: 1.2em;
   margin-bottom: 10px;
+  color: #000;
 }
 
 h4 {
@@ -230,7 +244,6 @@ h4 {
 }
 
 ul {
-  list-style: none;
   margin-bottom: 20px;
   text-align: left;
   padding-left: 20px;
@@ -241,17 +254,18 @@ ul li {
 }
 
 .get-started {
-  background-color: #FF8C00;
-  color: #FFF;
+  background-color: #F9A826;
+  color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1em;
+  align-items: end;
 }
 
 .get-started:hover {
-  background-color: #E67E22;
+  background-color: #ffbf00;
 }
 
 /* Responsive Design */
@@ -271,4 +285,98 @@ ul li {
     display: flex;
     justify-content: space-around;
   }
+}
+.home {
+  max-width: 600px;
+  background-color: #F9A826;
+}
+
+p {
+  font-size: 1.5em;
+  font-weight: bold;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+p:hover {
+  color: #fff;
+}
+p:active {
+  transform: translateY(-10px);
+  color: #000;
+}
+
+.one {
+  width: 500px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+  background-color: #F9A826;
+  height: 600px;
+  align-items: center;
+  align-content: center;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 70px;
+}
+
+input {
+  height: 30px;
+  outline: none;
+  padding: 20px;
+  font-size: 1em;
+  border-radius: 10px;
+  border: none;
+}
+
+button {
+  padding-left: 10px;
+  background-color: #ffbf00;
+  border: none;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 1em;
+}
+
+.timer-card {
+  display: flex;
+  border: 1px solid #ffbf00;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  width: 300px;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.timer-section {
+  background-color: #F9A826;
+  padding: 20px;
+  text-align: center;
+}
+
+.time {
+  font-size: 3em;
+  font-weight: bold;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.controls button {
+  border: none;
+  background: none;
+  font-weight: 500;
+  align-items: center;
+  font-size: 1.5em;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.motivation-section {
+  padding: 15px;
+}
+
+blockquote {
+  font-style: italic;
+  color: #555;
+  border-left: 4px solid #F9A826;
+  padding-left: 10px;
+  font-weight: 700;
 }
