@@ -12,7 +12,7 @@ p{
   transition: transform 0.3s;
   cursor: pointer;
 &:hover{
-  color: $secondary-color;
+  // color: $secondary-color;
 }
 &:active{
   transform: translateY(-10px);

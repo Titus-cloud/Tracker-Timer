@@ -49,13 +49,25 @@ h1 {
 }
 
 p {
-  font-size: 0.7em;
+  font-size: 0.5em;
   text-align: center;
 }
 
 .login-box {
   padding: 40px;
   flex: 1;
+  background-color: #F9A826;
+  padding: 40px;
+}
+
+.h2 {
+  font-size: 2.5em;
+}
+
+.loggin {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 h2 {
@@ -87,8 +99,17 @@ input[type=password] {
   align-items: center;
 }
 
+.here {
+  font-size: 0.8em;
+  text-align: center;
+}
+.here .reg {
+  font-size: 0.7em;
+}
+
 .login-btn {
-  background-color: #F9A826;
+  width: 50%;
+  margin: auto;
   color: #fff;
   padding: 10px;
   border: none;
@@ -102,20 +123,19 @@ input[type=password] {
 }
 
 .social-login {
-  margin-top: 20px;
+  margin: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: baseline;
   gap: 10px;
-  align-items: center;
+}
+.social-login p {
+  font-size: 0.9em;
 }
 
 .social-login i {
   max-width: 30px;
   cursor: pointer;
-}
-
-.reg {
-  font-size: 0.7em;
 }
 
 .left-section {
@@ -159,6 +179,7 @@ input[type=password] {
   border: 1px solid #ccc;
   border-radius: 5px;
   outline: none;
+  font-size: small;
 }
 .register-box .signup-btn {
   background-color: #F9A826;
@@ -288,9 +309,6 @@ p {
   font-weight: bold;
   transition: transform 0.3s;
   cursor: pointer;
-}
-p:hover {
-  color: #fff;
 }
 p:active {
   transform: translateY(-10px);
@@ -540,4 +558,67 @@ blockquote {
   border-left: 4px solid #F9A826;
   padding-left: 10px;
   font-weight: 700;
+}
+
+/* CSS for Description Box */
+.description-box {
+  background-color: #FFA500;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+}
+
+.description-box h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.description-box textarea {
+  width: 90%;
+  height: 100px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  font-size: 1em;
+  resize: none;
+  outline: none;
+}
+
+.description-box button {
+  background-color: white;
+  color: #FFA500;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/* CSS for Task List */
+.task-list {
+  background-color: #FFA500;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+.task-list h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.task-list ul {
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.task-list a {
+  color: white;
 }

@@ -1,0 +1,59 @@
+/* CSS for Description Box */
+.description-box {
+  background-color: #FFA500;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+}
+.description-box h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.description-box textarea {
+  width: 90%;
+  height: 100px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  font-size: 1em;
+  resize: none;
+  outline: none;
+}
+.description-box button {
+  background-color: white;
+  color: #FFA500;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+
+/* CSS for Task List */
+.task-list {
+  background-color: #FFA500;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+.task-list h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.task-list ul {
+  // list-style: none;
+  // text-decoration: none;
+  padding: 0;
+}
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+.task-list a {
+  color: white;
+  // text-decoration: underline;
+}

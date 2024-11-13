@@ -24,15 +24,26 @@ h1 {
 }
 
 p {
-  font-size: .7em;
+  font-size: .5em;
   text-align: center;
 }
 
 .login-box {
   padding: 40px;
   flex: 1;
+  background-color: $primary-color;
+  padding: 40px;
 }
 
+.h2{
+  font-size: 2.5em;
+}
+.loggin{
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+
+}
 h2 {
   margin-bottom: 20px;
 }
@@ -60,14 +71,23 @@ input[type="password"] {
   justify-content: space-between;
   margin-bottom: 20px;
   align-items: center;
-  // align-content: center;
-  // align-self: center;
 }
 
+.here{
+  font-size: .8em;
+  text-align: center;
+  .reg{
+    font-size: .7em;
+  }
+
+}
 .login-btn {
-  background-color: $primary-color;
+  // background-color: $primary-color;
+  width: 50%;
+  margin: auto;
   color: $secondary-color;
   padding: 10px;
+  // height: 40px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -79,11 +99,14 @@ input[type="password"] {
 }
 
 .social-login {
-  margin-top: 20px;
+  margin: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: baseline;
   gap: 10px;
-  align-items: center;
+  p{
+    font-size: .9em;
+  }
 }
 
 .social-login i {
@@ -91,8 +114,4 @@ input[type="password"] {
   cursor: pointer;
   // align-items: center;
   // align-self: center;
-}
-
-.reg{
-  font-size: .7em;
 }
