@@ -37,6 +37,10 @@ img {
   overflow: hidden;
 }
 
+.dark-theme {
+  background-color: red;
+}
+
 .left-section {
   background-color: #F9A826;
   padding: 60px 40px 40px 60px;

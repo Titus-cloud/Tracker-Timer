@@ -64,12 +64,12 @@ const quoteElement = document.querySelector('.motivation-section blockquote');
 
 async function fetchMotivation() {
   try {
-    const response = await fetch('https://quotes.rest/qod?category=inspire');
+    const response = await fetch('"https://type.fit/api/quotes"');
     const data = await response.json();
     quoteElement.textContent = `"${data.en}" — ${data.author}`;
 
     setInterval(async () => {
-      const newResponse = await fetch('https://quotes.rest/qod?category=inspire');
+      const newResponse = await fetch('"https://type.fit/api/quotes"');
       const newData = await newResponse.json();
       quoteElement.textContent = `"${newData.en}" — ${newData.author}`;
     }, 30000); // 30 seconds

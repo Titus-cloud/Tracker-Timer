@@ -9,28 +9,35 @@
   <body>
     <div class="timer-card">
       <div class="deadline-section">
-        <div class="topp">
-          <h2>Timer</h2>
-          <h2>Alarm</h2>
+        <div class="header">
+          <h2>Timer & Alarm</h2>
+          <button class="theme-toggle">Switch Theme</button>
         </div>
         <div class="deadline-info">
-          <p class="label labelOne">Deadline</p>
-          <p class="date">17-12-2024</p>
-          <p class="day">Saturday</p>
+          <p class="label">Deadline:</p>
+          <input type="datetime-local" class="date-picker" />
+          <p class="day">Day: <span class="day-name"></span></p>
         </div>
         <div class="time-left">
-          <p class="lab">Time-left</p>
-          <p class="countdown">36:47:52</p>
+          <p class="label">Time Left:</p>
+          <p class="countdown">00:00:00</p>
+        </div>
+        <div class="controls">
+          <button class="start">Start</button>
+          <button class="pause">Pause</button>
+          <button class="reset">Reset</button>
         </div>
       </div>
       <div class="motivation-section">
-        <h3>Be Motivated:</h3>
-        <blockquote>
+        <h3>Stay Motivated:</h3>
+        <blockquote class="quote">
           “Success is not the key to happiness. Happiness is the key to success.
-          If you love what you are doing, you will be successful.” — Albert
-          Schweitzer
+          If you love what you are doing, you will be successful.” — Albert Schweitzer
         </blockquote>
+        <button class="new-quote">Get New Quote</button>
       </div>
     </div>
+    
+    <script src="../js/std.js"></script>
   </body>
 </html>
