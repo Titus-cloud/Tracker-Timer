@@ -67,6 +67,15 @@
   }
   
 }
+// Properties for error messages
+.message {
+  color: red;
+  margin-top: 10px;
+  font-size: 2em;
+  font-weight: bold;
+  // background-color: #fff;
+}
+
 
 @media (max-width: 768px) {
   .container {
