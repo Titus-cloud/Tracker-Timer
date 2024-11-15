@@ -1,55 +1,130 @@
 @use "../../utilities/variables" as*;
 
-.timer {
-  max-width: 600px;
-  background-color: $primary-color;
-  color: white;
+// .timer {
+//   max-width: 600px;
+//   padding: 20px;
+//   margin: 20px;
+//   // font-family: Arial, sans-serif;
+// }
+
+// .timer-header {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   font-size: 16px;
+  // }
+  
+  // .time-display {
+    //   text-align: center;
+//   margin-top: 10px;
+// }
+
+// .time-display h4 {
+//   font-size: 18px;
+//   margin-bottom: 5px;
+// }
+
+// .time-display p {
+//   font-size: 48px;
+//   margin: 5px 0;
+// }
+
+// .days {
+  //   display: flex;
+  //   justify-content: space-around;
+  //   margin: 10px 0;
+//   flex-wrap: wrap;
+// }
+
+// .days span {
+//   background-color: white;
+//   color: #ff9800;
+//   cursor: pointer;
+//   border-radius: 4px;
+//   padding: 3px 5px;
+//   font-size: 12px;
+// }
+
+// .stop-button {
+//   
+
+// .motivation {
+//   background-color: white;
+//   color: #333;
+//   border-radius: 5px;
+//   padding: 15px;
+//   margin-top: 20px;
+// }
+
+// .motivation h4 {
+  //   font-size: 16px;
+//   margin-bottom: 5px;
+// }
+
+// // .motivation p {
+// //   font-size: 14px;
+// //   line-height: 1.5;
+// // }
+
+// blockquote {
+//   font-style: italic;
+//   color: #555;
+//   border-left: 4px solid $primary-color;
+//   padding-left: 10px;
+//   font-weight: 700;
+// }
+
+// body {
+//   font-family: Arial, sans-serif;
+//   background-color: #f4f4f4;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 100vh;
+//   margin: 0;
+// }
+
+.task-container {
+  // background-color: white;
   border-radius: 10px;
-  box-shadow: 2px 2px 8px $font-color;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 800px;
   padding: 20px;
-  margin: 20px;
-  // font-family: Arial, sans-serif;
-}
-
-.timer-header {
-  display: flex;
-  justify-content: space-between;
-  font-size: 16px;
-}
-
-.time-display {
   text-align: center;
-  margin-top: 10px;
+  background-color: $primary-color;
+  box-shadow: 2px 2px 8px $font-color;
 }
 
-.time-display h4 {
-  font-size: 18px;
-  margin-bottom: 5px;
+h2 {
+  // background-color: #0056b3;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 2em;
 }
 
-.time-display p {
-  font-size: 48px;
-  margin: 5px 0;
-}
-
-.days {
+.task-input {
   display: flex;
-  justify-content: space-around;
-  margin: 10px 0;
-  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }
 
-.days span {
-  background-color: white;
-  color: #ff9800;
-  cursor: pointer;
-  border-radius: 4px;
-  padding: 3px 5px;
-  font-size: 12px;
+input, select {
+  display: flex;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  height: 50px;
+  outline: none;
+  // align-self: center;
 }
 
-.stop-button {
+button {
   background-color: $link-hover;
+  text-align: center;
   border: none;
   color: white;
   padding: 10px 20px;
@@ -65,28 +140,49 @@
   }
 }
 
-.motivation {
-  background-color: white;
-  color: #333;
-  border-radius: 5px;
-  padding: 15px;
+#taskList {
   margin-top: 20px;
 }
 
-.motivation h4 {
-  font-size: 16px;
-  margin-bottom: 5px;
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
 
-// .motivation p {
-//   font-size: 14px;
-//   line-height: 1.5;
+.mark-done {
+  background-color: $link-hover;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  &:active{
+    transform: translateX(10px);
+  }
+}
+
+// .mark-done:hover {
+//   background-color: #218838;
 // }
 
-blockquote {
-  font-style: italic;
-  color: #555;
-  border-left: 4px solid $primary-color;
-  padding-left: 10px;
-  font-weight: 700;
+.ontops{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h3{
+    cursor: pointer;
+    &:hover{
+      color: #fff;
+
+    }
+    &:active{
+      color: #000;
+      transform: translateY(10px);
+    }
+  }
 }

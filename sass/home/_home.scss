@@ -6,13 +6,13 @@
   // background-color: red;
 }
 
-p{
+.home-p{
   font-size: 1.5em;
   font-weight: bold;
   transition: transform 0.3s;
   cursor: pointer;
 &:hover{
-  // color: $secondary-color;
+  color: $secondary-color;
 }
 &:active{
   transform: translateY(-10px);

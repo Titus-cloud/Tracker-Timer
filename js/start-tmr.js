@@ -8,6 +8,14 @@ const resetButton = document.querySelector('.reset');
 const playButton = document.querySelector('.play');
 const pauseButton = document.querySelector('.pause');
 
+// Retrieve the current user (from localStorage)
+const currentUser = localStorage.getItem('loggedInUser');
+
+if (!currentUser) {
+  alert("Please log in first!");
+  // Redirect to login page or take appropriate action
+}
+
 // Function to update the displayed time
 function updateTime() {
   const minutes = Math.floor(timeRemaining / 60).toString().padStart(2, '0');
@@ -18,6 +26,8 @@ function updateTime() {
     clearInterval(timerInterval);
     timerInterval = null;
     alert('Congratulations! You completed your session!');
+    // Save the completed session state
+    saveTimerState();
   }
 }
 
@@ -27,6 +37,8 @@ function startTimer() {
   timerInterval = setInterval(() => {
     timeRemaining--;
     updateTime();
+    // Save the timer state on every tick
+    saveTimerState();
   }, 1000);
 }
 
@@ -34,6 +46,8 @@ function startTimer() {
 function pauseTimer() {
   clearInterval(timerInterval);
   timerInterval = null;
+  // Save the paused state
+  saveTimerState();
 }
 
 // Reset the timer
@@ -42,6 +56,8 @@ function resetTimer() {
   timerInterval = null;
   timeRemaining = totalTime;
   updateTime();
+  // Save the reset state
+  saveTimerState();
 }
 
 // Function to set custom time (e.g., 50 minutes)
@@ -49,6 +65,38 @@ function setCustomTime(minutes) {
   totalTime = minutes * 60;
   timeRemaining = totalTime;
   updateTime();
+  // Save the custom time set
+  saveTimerState();
+}
+
+// Function to save the timer state to localStorage
+function saveTimerState() {
+  if (currentUser) {
+    const timerState = {
+      totalTime,
+      timeRemaining,
+      timerIntervalRunning: !!timerInterval,
+    };
+
+    localStorage.setItem(`timerState_${currentUser}`, JSON.stringify(timerState));
+  }
+}
+
+// Function to load the timer state from localStorage
+function loadTimerState() {
+  if (currentUser) {
+    const savedState = JSON.parse(localStorage.getItem(`timerState_${currentUser}`));
+
+    if (savedState) {
+      totalTime = savedState.totalTime;
+      timeRemaining = savedState.timeRemaining;
+      updateTime();
+
+      if (savedState.timerIntervalRunning) {
+        startTimer();
+      }
+    }
+  }
 }
 
 // Event listeners for timer controls
@@ -57,30 +105,29 @@ pauseButton.addEventListener('click', pauseTimer);
 resetButton.addEventListener('click', resetTimer);
 
 // Set an initial time (e.g., 50 minutes)
-setCustomTime(50);
+setCustomTime(60);
+
+// Load the saved timer state if available
+loadTimerState();
 
 // Motivational Quotes Functionality
 const quoteElement = document.querySelector('.motivation-section blockquote');
 
 async function fetchMotivation() {
   try {
-    const response = await fetch('"https://type.fit/api/quotes"');
+    const response = await fetch("https://type.fit/api/quotes");
     const data = await response.json();
-    quoteElement.textContent = `"${data.en}" — ${data.author}`;
+    quoteElement.textContent = `"${data[0].text}" — ${data[0].author}`;
 
     setInterval(async () => {
-      const newResponse = await fetch('"https://type.fit/api/quotes"');
+      const newResponse = await fetch("https://type.fit/api/quotes");
       const newData = await newResponse.json();
-      quoteElement.textContent = `"${newData.en}" — ${newData.author}`;
+      quoteElement.textContent = `"${newData[0].text}" — ${newData[0].author}`;
     }, 30000); // 30 seconds
   } catch (error) {
     quoteElement.textContent = 'Stay positive and keep going!';
   }
 }
-
-// fetchMotivation();
-
-// }
 
 // Fetch and display motivational quotes
 fetchMotivation();

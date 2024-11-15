@@ -1,60 +1,86 @@
-let timerInterval;
-let timeLeft = 0;
-const timeDisplay = document.getElementById("time-left");
-const startBtn = document.getElementById("start-btn");
-const stopBtn = document.getElementById("stop-btn");
-const resetBtn = document.getElementById("reset-btn");
-const quoteDisplay = document.getElementById("quote");
+// Load tasks on page load
+window.onload = function() {
+  displayTasks();
+};
 
-const alarmSound = new Audio("https://www.soundjay.com/button/beep-07.wav"); // Set the alarm sound
+// Add a new task
+function addTask() {
+  const taskInput = document.getElementById('taskInput').value.trim();
+  const priority = document.getElementById('priority').value;
+  const deadline = document.getElementById('deadline').value;
 
-function startTimer() {
-  const hours = parseInt(document.getElementById("hours").value) || 0;
-  const minutes = parseInt(document.getElementById("minutes").value) || 0;
-  const seconds = parseInt(document.getElementById("seconds").value) || 0;
+  if (!taskInput || !deadline) {
+    displayMessage("Please fill in both the task and deadline!", 20000);
+    return;
+  }
 
-  timeLeft = (hours * 3600) + (minutes * 60) + seconds;
+  const task = {
+    taskInput,
+    priority,
+    deadline,
+    completed: false
+  };
 
-  if (timerInterval) clearInterval(timerInterval);
+  let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  tasks.push(task);
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 
-  timerInterval = setInterval(() => {
-    if (timeLeft <= 0) {
-      clearInterval(timerInterval);
-      alarmSound.play();  // Play alarm sound when timer reaches zero
-      alert("Time's up! Well done!");  // Optionally, alert the user
-      return;
-    }
-    timeLeft--;
-    updateTimeDisplay();
-  }, 1000);
+  displayMessage("Task added successfully!", 20000);
+  displayTasks();
+  clearInputs();
 }
 
-function updateTimeDisplay() {
-  const hours = Math.floor(timeLeft / 3600);
-  const minutes = Math.floor((timeLeft % 3600) / 60);
-  const seconds = timeLeft % 60;
-  timeDisplay.textContent = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+// Display tasks
+function displayTasks() {
+  const taskList = document.getElementById('taskList');
+  taskList.innerHTML = "";
+
+  const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+  tasks.forEach((task, index) => {
+    const taskItem = document.createElement('div');
+    taskItem.classList.add('task-item');
+    
+    taskItem.innerHTML = `
+      <div>
+        <strong>${task.taskInput}</strong> - ${task.priority} - Deadline: ${task.deadline}
+      </div>
+      <button class="mark-done" onclick="markDone(${index})">Mark Done</button>
+    `;
+    
+    taskList.appendChild(taskItem);
+  });
 }
 
-function stopTimer() {
-  clearInterval(timerInterval);
+// Mark task as done
+function markDone(index) {
+  let tasks = JSON.parse(localStorage.getItem('tasks'));
+  tasks.splice(index, 1); // Remove the task
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+  displayTasks();
 }
 
-function resetTimer() {
-  timeLeft = 0;
-  updateTimeDisplay();
-  clearInterval(timerInterval);
+// Clear input fields
+function clearInputs() {
+  document.getElementById('taskInput').value = "";
+  document.getElementById('deadline').value = "";
 }
 
-async function fetchMotivation() {
-  const res = await fetch("https://api.quotable.io/random");
-  const data = await res.json();
-  quoteDisplay.textContent = `"${data.content}" – ${data.author}`;
+// Display a message for a set duration
+function displayMessage(message, duration) {
+  const messageBox = document.createElement('div');
+  messageBox.innerText = message;
+  messageBox.style.backgroundColor = "#000";
+  messageBox.style.color = "#fff";
+  messageBox.style.padding = "10px";
+  messageBox.style.position = "fixed";
+  messageBox.style.top = "10px";
+  messageBox.style.right = "10px";
+  messageBox.style.borderRadius = "5px";
+
+  document.body.appendChild(messageBox);
+
+  setTimeout(() => {
+    document.body.removeChild(messageBox);
+  }, 5000);
 }
-
-startBtn.addEventListener("click", startTimer);
-stopBtn.addEventListener("click", stopTimer);
-resetBtn.addEventListener("click", resetTimer);
-
-setInterval(fetchMotivation, 30000);  // Update quote every 30 seconds
-fetchMotivation();  // Fetch initial quote

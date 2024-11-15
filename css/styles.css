@@ -17,7 +17,7 @@ body {
 a {
   color: #F9A826;
   text-decoration: none;
-  font-size: 0.7em;
+  font-size: 1em;
 }
 a:hover {
   color: #000;
@@ -316,13 +316,16 @@ ul li {
   background-color: #F9A826;
 }
 
-p {
+.home-p {
   font-size: 1.5em;
   font-weight: bold;
   transition: transform 0.3s;
   cursor: pointer;
 }
-p:active {
+.home-p:hover {
+  color: #fff;
+}
+.home-p:active {
   transform: translateY(-10px);
   color: #000;
 }
@@ -431,9 +434,19 @@ blockquote {
   text-align: center;
 }
 
-h2 {
-  font-size: 1.2em;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header h2 {
+  font-size: 1em;
   margin-bottom: 15px;
+  cursor: pointer;
+}
+.header h2:active {
+  color: #000;
+  transform: translateY(10px);
 }
 
 .divider {
@@ -486,55 +499,45 @@ blockquote {
   color: inherit;
 }
 
-.timer {
-  max-width: 600px;
-  background-color: #F9A826;
-  color: white;
+.task-container {
   border-radius: 10px;
-  box-shadow: 2px 2px 8px #000;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 800px;
   padding: 20px;
-  margin: 20px;
-}
-
-.timer-header {
-  display: flex;
-  justify-content: space-between;
-  font-size: 16px;
-}
-
-.time-display {
   text-align: center;
-  margin-top: 10px;
+  background-color: #F9A826;
+  box-shadow: 2px 2px 8px #000;
 }
 
-.time-display h4 {
-  font-size: 18px;
-  margin-bottom: 5px;
+h2 {
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 2em;
 }
 
-.time-display p {
-  font-size: 48px;
-  margin: 5px 0;
-}
-
-.days {
+.task-input {
   display: flex;
-  justify-content: space-around;
-  margin: 10px 0;
-  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }
 
-.days span {
-  background-color: white;
-  color: #ff9800;
-  cursor: pointer;
-  border-radius: 4px;
-  padding: 3px 5px;
-  font-size: 12px;
+input, select {
+  display: flex;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  height: 50px;
+  outline: none;
 }
 
-.stop-button {
+button {
   background-color: #ffbf00;
+  text-align: center;
   border: none;
   color: white;
   padding: 10px 20px;
@@ -542,48 +545,93 @@ blockquote {
   cursor: pointer;
   margin-top: 10px;
 }
-.stop-button:hover {
+button:hover {
   background-color: #F9A826;
   color: #000;
 }
-.stop-button:active {
+button:active {
   color: #fff;
   background-color: #000;
 }
 
-.motivation {
-  background-color: white;
-  color: #333;
-  border-radius: 5px;
-  padding: 15px;
+#taskList {
   margin-top: 20px;
 }
 
-.motivation h4 {
-  font-size: 16px;
-  margin-bottom: 5px;
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
 
-blockquote {
-  font-style: italic;
-  color: #555;
-  border-left: 4px solid #F9A826;
-  padding-left: 10px;
-  font-weight: 700;
+.mark-done {
+  background-color: #ffbf00;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.mark-done:active {
+  transform: translateX(10px);
+}
+
+.ontops {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ontops h3 {
+  cursor: pointer;
+}
+.ontops h3:hover {
+  color: #fff;
+}
+.ontops h3:active {
+  color: #000;
+  transform: translateY(10px);
 }
 
 /* CSS for Description Box */
-.description-box {
-  background-color: #FFA500;
-  padding: 20px;
+.tasks {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  width: 50%;
+}
+.tasks textarea {
+  resize: none;
+  outline: none;
   border-radius: 10px;
-  color: white;
+  height: 100%;
+  padding: 5px;
+}
+.tasks input {
+  height: inherit;
+}
+.tasks .btn {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 10px;
+}
+.tasks h2 {
+  padding: 0;
+  margin: 0;
   text-align: center;
 }
 
-.description-box h2 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+.description-box {
+  border-radius: 10px;
+  color: white;
+  text-align: center;
 }
 
 .description-box textarea {
@@ -600,25 +648,32 @@ blockquote {
 
 .description-box button {
   background-color: white;
-  color: #FFA500;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
-  font-size: 1em;
+  font-size: 1.2em;
   cursor: pointer;
+  align-content: center;
 }
 
 /* CSS for Task List */
-.task-list {
-  background-color: #FFA500;
-  padding: 20px;
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.list .task-list {
+  background-color: #fff;
   border-radius: 10px;
   color: white;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .task-list h2 {
   font-size: 1.5em;
-  margin-bottom: 10px;
 }
 
 .task-list ul {
@@ -628,9 +683,58 @@ blockquote {
 .task-list li {
   display: flex;
   justify-content: space-between;
-  margin: 5px 0;
 }
 
 .task-list a {
-  color: white;
+  color: black;
+}
+
+#taskList li {
+  cursor: pointer;
+  color: black;
+}
+
+.alls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.view-btn {
+  color: black;
+  background-color: #fff;
+  font-size: 0.7em;
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+  align-self: center;
+}
+.view-btn:hover {
+  height: inherit;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .tasks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+  }
+  .tasks .alls {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .tasks input {
+    width: 150px;
+  }
+  .tasks textarea {
+    width: 150px;
+  }
+  .task-list {
+    width: 100%;
+    text-align: center;
+    word-wrap: break-word;
+    align-content: center;
+  }
 }

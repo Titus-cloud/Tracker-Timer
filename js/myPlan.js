@@ -32,8 +32,8 @@ function recordAction(actionType, details) {
   localStorage.setItem('userActions', JSON.stringify(actions));
 }
 
-// Function to capture when a user selects a plan
-function selectPlan(planName, price, features) {
+// Function to capture when a user selects a plan and redirect accordingly
+function selectPlan(planName, price, features, planType) {
   const details = {
     planName: planName,
     price: price,
@@ -43,10 +43,12 @@ function selectPlan(planName, price, features) {
   // Record the plan selection action
   recordAction('Plan Selected', details);
 
-  // Optionally, redirect the user after selecting a plan (can be adjusted as needed)
-  // For now, we simply log the action to show it's been recorded
+  // Save the selected plan to localStorage
+  localStorage.setItem('selectedPlan', planType);
+
+  // Log the action to show it's been recorded (for debugging)
   console.log(`User selected the ${planName}. Details: `, details);
 
-  // Redirect to another page if needed (you can customize the redirection URL as needed)
-  // Example: window.location.href = 'next-page.html';
+  // Redirect to tasks page (tasks.html) to input the task
+  window.location.href = './tasks.html';
 }

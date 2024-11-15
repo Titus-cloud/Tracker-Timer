@@ -1,26 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Tasks</title>
-  <link rel="stylesheet" href="../css/styles.css">
-</head>
-<body>
-  <div class="container">
-    <!-- HTML for Description Box -->
-    <div class="description-box">
-      <h2>Description</h2>
-      <textarea id="taskDescription" placeholder="currently typing..."></textarea>
-      <button onclick="commitTask()">Commit</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Input and Description</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <!-- Message Display -->
+    <div id="message" class="message"></div>
+    <div class="container tasks">
+      <h2>Task Manager</h2>
+
+      <!-- Task Input Section -->
+      <div class="alls">
+        <div class="task-input-section">
+          <h3>Input Your Task</h3>
+          <input type="text" id="taskInput" placeholder="Enter your task..." />
+        </div>
+
+        <!-- Description Input Section -->
+        <div class="description-input-section">
+          <h3>Describe Your Task</h3>
+          <textarea
+            id="taskDescription"
+            placeholder="Enter a description..."
+          ></textarea>
+        </div>
+      </div>
+      <div class="btn">
+        <button onclick="addTask()">Save Task</button>
+      </div>
+
+      <!-- Task List Section -->
+       <div class="list">
+      <div class="task-list">
+        <h3>Your Added Tasks</h3>
+        <ul id="taskList"></ul>
+      </div>
+    </div>
     </div>
 
-    <!-- HTML for Task List -->
-    <div class="task-list">
-      <h2>Your Added Tasks</h2>
-      <ul id="taskList"></ul>
-    </div>
-  </div>
-  <script src="../js/tasks.js"></script>
-</body>
+    <script src="../js/tasks.js"></script>
+  </body>
 </html>

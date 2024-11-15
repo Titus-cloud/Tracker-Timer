@@ -30,7 +30,20 @@ document.getElementById("login-form").addEventListener("submit", function (e) {
     localStorage.setItem("loggedInUser", email);
 
     setTimeout(() => {
-      window.location.href = "./plan.html";
+      // Check if a plan was selected in localStorage
+      // const selectedPlan = localStorage.getItem('selectedPlan');
+
+      // // Redirect to the correct plan's timer page
+      // if (selectedPlan === 'starter') {
+      //   window.location.href = './starter-timer.html';
+      // } else if (selectedPlan === 'standard') {
+      //   window.location.href = './standard-timer.html';
+      // } else if (selectedPlan === 'premium') {
+      //   window.location.href = './premium-timer.html';
+      // } else {
+      //   // If no plan is selected, go to the plan selection page
+      // }
+      window.location.href = './plan.html';
     }, 1500);
   }
 });

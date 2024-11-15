@@ -80,18 +80,18 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Fetch Motivational Quote
-  async function fetchMotivation() {
-    const response = await fetch("https://api.quotable.io/random");
-    if (response.ok) {
-      const data = await response.json();
-      quoteDisplay.textContent = `"${data.content}" — ${data.author}`;
-    } else {
-      quoteDisplay.textContent = "Failed to load quote. Try again!";
-    }
-  }
+  // async function fetchMotivation() {
+  //   const response = await fetch("https://api.quotable.io/random");
+  //   if (response.ok) {
+  //     const data = await response.json();
+  //     quoteDisplay.textContent = `"${data.content}" — ${data.author}`;
+  //   } else {
+  //     quoteDisplay.textContent = "Failed to load quote. Try again!";
+  //   }
+  // }
 
-  // Initial Quote Load
-  fetchMotivation();
+  // // Initial Quote Load
+  // fetchMotivation();
 
   // Set Day from Deadline Date
   datePicker.addEventListener('input', function () {
