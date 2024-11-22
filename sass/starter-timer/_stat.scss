@@ -29,12 +29,17 @@
 .controls button {
   border: none;
   background: none;
-  color: red;
+  color: #000;
   font-weight: 500;
   align-items: center;
   font-size: 1.5em;
   cursor: pointer;
   margin: 0 5px;
+  &:hover{
+    // color: darkgrey;
+    font-weight: bold;
+    // transform: matrixY(10px);
+  }
 }
 
 .motivation-section {
