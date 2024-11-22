@@ -45,5 +45,13 @@ img{
 // }
 
 .dark-theme{
-  background-color: red;
+  background-color: darkgrey;
+  color: white;
+  .countdown{
+    color: black;
+  }
+}
+
+.success{
+  color: green;
 }

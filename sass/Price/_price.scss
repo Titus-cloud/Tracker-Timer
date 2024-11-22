@@ -13,11 +13,12 @@
   .heading{
     display: flex;
     justify-items: center;
-
+    
   }
 }
 
-h2 {
+.choose {
+  color: black;
   margin-bottom: 80px;
 }
 
@@ -66,7 +67,7 @@ ul li {
 
 .get-started {
   background-color: $primary-color;
-  color: $secondary-color;
+  color: #000;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;

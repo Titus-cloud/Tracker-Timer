@@ -38,7 +38,15 @@ img {
 }
 
 .dark-theme {
-  background-color: red;
+  background-color: darkgrey;
+  color: white;
+}
+.dark-theme .countdown {
+  color: black;
+}
+
+.success {
+  color: green;
 }
 
 .left-section {
@@ -235,7 +243,8 @@ input[type=password] {
   justify-items: center;
 }
 
-h2 {
+.choose {
+  color: black;
   margin-bottom: 80px;
 }
 
@@ -282,7 +291,7 @@ ul li {
 
 .get-started {
   background-color: #F9A826;
-  color: #fff;
+  color: #000;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -389,6 +398,7 @@ button {
 .controls button {
   border: none;
   background: none;
+  color: red;
   font-weight: 500;
   align-items: center;
   font-size: 1.5em;
@@ -713,6 +723,14 @@ button:active {
 .view-btn:hover {
   height: inherit;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.btn button {
+  color: #000;
+  font-weight: bold;
+}
+.btn button:hover {
+  color: #fff;
 }
 
 @media (max-width: 768px) {
