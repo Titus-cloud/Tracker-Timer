@@ -68,18 +68,19 @@ input[type="password"] {
 
 .options {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 20px;
   align-items: center;
+
 }
 
 .here{
   font-size: .8em;
   text-align: center;
-  .reg{
-    font-size: .7em;
-  }
-
+  padding-top: 10px;
+}
+.reg{
+  font-size: 1em;
 }
 .login-btn {
   // background-color: $primary-color;

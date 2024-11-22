@@ -99,7 +99,7 @@ input[type=password] {
 
 .options {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 20px;
   align-items: center;
 }
@@ -107,9 +107,11 @@ input[type=password] {
 .here {
   font-size: 0.8em;
   text-align: center;
+  padding-top: 10px;
 }
-.here .reg {
-  font-size: 0.7em;
+
+.reg {
+  font-size: 1em;
 }
 
 .login-btn {
